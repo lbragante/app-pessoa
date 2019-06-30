@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'sass/reset';
+@import 'sass/fonte';
+@import 'sass/variaveis';
+@import 'sass/mixins';
+
+@include selecao;
+
+
+body {
+    background-color: $cor-clara;
+    font-family: $fonte-padrao;
+    -webkit-font-smoothing: antialiased !important;
+}
+
+.container {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 30px;
+}

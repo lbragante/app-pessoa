@@ -1,0 +1,72 @@
+@import '../../sass/variaveis';
+@import '../../sass/mixins';
+
+.inserir-pessoa {
+    padding: 3em 0;
+}
+
+form div {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1em;
+    margin-bottom: .35em;
+}
+
+select {
+    @include selecao;
+}
+
+input, select {
+    height: 3em;
+    border-radius: $raio-borda-arredondada;
+    border: 1px solid darken($cor-terciaria, 10%);
+    padding: 15px 18px;
+    font-size: 1.2em;
+    font-family: $fonte-padrao;
+    transition: $transicao-padrao;
+}
+
+input.ng-touched.ng-invalid, select.ng-touched.ng-invalid {
+    border: 1.4px solid $cor-erro;
+}
+
+input.ng-touched.ng-valid, select.ng-touched.ng-valid {
+    border: 1.4px solid $cor-sucesso;
+}
+
+.texo-validacao {
+    color: $cor-erro;
+    margin-top: .3em;
+}
+
+button {
+    padding: .8em 1.6em;
+    margin-top: .5em;
+    border-radius: $raio-borda-arredondada;
+    border: 0;
+    background: $cor-primaria;
+    color: #fff;
+    font-family: $fonte-padrao;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: $transicao-padrao;
+}
+
+button:hover {
+    background-color: $cor-secundaria;
+}
+
+button:active {
+    background-color: darken($cor-secundaria, 20%);
+    transition: none;
+}
+
+button:disabled {
+    background-color: lighten($cor-primaria, 30%);
+    cursor: not-allowed;
+    transition: none;
+}

@@ -1,0 +1,23 @@
+<section class="inserir-pessoa">
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div>
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" #nome="ngModel" [(ngModel)]="service.formData.nome" minlength="3" placeholder="Insira o nome" required>
+            <span *ngIf="nome.invalid && nome.touched" class="texo-validacao">Campo obrigatório</span>
+        </div>
+    
+        <div>
+            <label for="sexo">Sexo</label>
+            <select id="sexo" name="sexo" #sexo="ngModel" [(ngModel)]="service.formData.sexo" placeholder="Selecione o sexo" required>
+                <option></option>
+                <option>Feminino</option>
+                <option>Masculino</option>
+            </select>
+            <span *ngIf="sexo.invalid && sexo.touched" class="texo-validacao">Campo obrigatório</span>
+        </div>
+    
+        <div>
+            <button type="submit" [disabled]="form.invalid">Inserir</button>
+        </div>
+    </form>
+</section>

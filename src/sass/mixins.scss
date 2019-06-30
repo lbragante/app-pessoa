@@ -1,0 +1,11 @@
+@mixin selecao {
+    ::-moz-selection {
+        color: #fff;
+		background: $cor-primaria;
+	}
+      
+    ::selection {
+        color: #fff;
+		background: $cor-primaria;
+	}
+}
